@@ -10,10 +10,12 @@ export class TestComponent implements OnInit {
 
   constructor(private apiService : ApiServiceService) {}
 
+  readData: any;
+
   ngOnInit(): void {
       this.apiService.getAllData().subscribe((res) =>{
         console.log(res);
-        
+        this.readData = res;
       });
   }
 
