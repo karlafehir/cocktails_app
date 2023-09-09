@@ -14,23 +14,23 @@ app.use(express.json())
 app.use(cors())
 // app.use(bodyparser.json())
 
-import { getRecipe, getRecipes, createRecipe } from './database.js'
+import { getCocktails, getCocktail, createCocktail } from './database.js'
 
-app.get("/recipes" , async (req, res) => {
-    const recipes = await getRecipes()
-    res.send(recipes)
+app.get("/cocktails" , async (req, res) => {
+    const cocktails = await getCocktails()
+    res.send(cocktails)
 })
 
-app.get("/recipes/:id" , async (req, res) => {
+app.get("/cocktails/:id" , async (req, res) => {
     const id = req.params.id
-    const recipe = await getRecipe(id)
-    res.send(recipe)
+    const cocktails = await getCocktails(id)
+    res.send(cocktails)
 })
 
-app.post("/recipes", async (req,res) => {
-    const { title, description, instructions, time } = req.body
-    const recipe = await createRecipe(title, description, instructions, time)
-    res.status(201).send(recipe)
+app.post("/cocktails", async (req,res) => {
+    const { title, taste, description, instructions } = req.body
+    const cocktails = await createCocktail(title, taste, description, instructions)
+    res.status(201).send(cocktails)
 })
 
 app.use((err, req, res, next) => {

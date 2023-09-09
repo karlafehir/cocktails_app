@@ -13,26 +13,26 @@ const pool = mysql.createPool({
 }).promise()
 
 
-export async function getRecipes(){
+export async function getCocktails(){
     const [rows] = await pool.query(`
-        SELECT * FROM recipes`);
+        SELECT * FROM cocktails`);
     return rows;
 }
 
-export async function getRecipe(id){
+export async function getCocktail(id){
     const [rows] = await pool.query(`
-        SELECT * FROM recipes 
+        SELECT * FROM cocktails 
         WHERE id = ?`, [id]);
     return rows;
 }
 
-export async function createRecipe(title, description, instructions, time){
+export async function createCocktail(title, taste, description, instructions){
     const [result] = await pool.query(
-        `INSERT INTO recipes ( title, description, instructions, time )
-         VALUES (?, ?, ?, ?)`, [ title, description, instructions, time ]);
-    return getRecipe(result.insertId);
+        `INSERT INTO cocktails ( title, taste, description, instructions )
+         VALUES (?, ?, ?, ?)`, [ title, taste, description, instructions ]);
+    return getCocktail(result.insertId);
 }
 
 
-const result = await getRecipes();
+const result = await getCocktails();
 console.log(result);

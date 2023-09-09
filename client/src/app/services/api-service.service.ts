@@ -9,7 +9,7 @@ export class ApiServiceService {
 
   constructor(private _http: HttpClient) { }
 
-  apiUrl = 'http://localhost:8080/recipes';
+  apiUrl = 'http://localhost:8080/cocktails';
 
   getAllData() : Observable<any>{
     return this._http.get(this.apiUrl);
