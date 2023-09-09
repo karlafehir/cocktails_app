@@ -1,8 +1,18 @@
 import express from 'express'
+import cors from 'cors'
+// import bodyparser from 'body-parser'
+
+// const express = require('express')
+// const bodyparser = require('body-parser')
+// const cors = require('cors')
+
+
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
+// app.use(bodyparser.json())
 
 import { getRecipe, getRecipes, createRecipe } from './database.js'
 
@@ -25,6 +35,7 @@ app.post("/recipes", async (req,res) => {
 
 app.use((err, req, res, next) => {
     console.error(err.stack)
+    res.header("Access-Control-Allow-Origin", "localhost:4200"); 
     res.status(500).send('Something broke!')
 })
 
