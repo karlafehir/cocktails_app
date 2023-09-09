@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from '../services/api-service.service';
+import { ApiServiceService } from '../../services/api-service.service';
 
 @Component({
   selector: 'app-test',
@@ -15,7 +15,9 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
       this.apiService.getAllData().subscribe((res) =>{
         console.log(res);
-        this.readData = res;
+        this.readData = res
+        console.log(this.readData);
+        
       });
   }
 
