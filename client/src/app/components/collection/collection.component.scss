@@ -1,0 +1,27 @@
+.buttons{
+    display: flex;
+    gap: 12px;
+    padding: 30px;
+}
+
+.button-test{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 40px;
+    border: 1px solid var(--primary-color);
+    width: 140px;
+    height: 40px;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+}
+
+.button-test:focus {
+    color: black;
+    background-color: var(--primary-color); 
+}

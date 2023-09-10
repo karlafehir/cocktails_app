@@ -1,1 +1,6 @@
-<p>collection works!</p>
+
+<div class="buttons">
+    <div *ngFor="let taste of tastes">
+        <button class="button-test" (click)="getCocktailByType()">{{taste}}</button>
+    </div>
+</div>
