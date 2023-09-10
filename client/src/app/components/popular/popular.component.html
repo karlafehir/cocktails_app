@@ -1,1 +1,15 @@
-<p>popular works!</p>
+<div class="container">
+    <!-- <div class="image-container">
+      <img src="../../../assets/images/img.png" alt="Image Alt Text" />
+    </div> -->
+    <div class="cocktail" *ngFor = 'let cocktail of readData'>
+            <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
+            <div class="cocktail-details" >
+                <p class="cocktail-title">{{cocktail.title}}</p>
+                <p class="cocktail-description">{{cocktail.description}}</p>
+                <p class="cocktail-instructions">{{cocktail.instructions}}</p>
+
+        </div>
+    </div>
+  </div>
+  

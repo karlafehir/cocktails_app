@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-container {
+    margin: 60px;
+    max-width: 50%;
+  }
+  
+  .text-container {
+    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  img {
+    width: 50%;
+    width: 500px;
+    border-radius: 20px;
+  }
+
+.cocktail{
+    display: flex;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.cocktail-details{
+    max-width: 40%;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
