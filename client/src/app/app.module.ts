@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http'
 import { ApiServiceService } from './services/api-service.service';
 import { HeaderComponent } from './components/header/header.component';
 import { PopularComponent } from './components/popular/popular.component';
+import { CollectionComponent } from './components/collection/collection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
     HeaderComponent,
-    PopularComponent
+    PopularComponent,
+    CollectionComponent
   ],
   imports: [
     BrowserModule,
