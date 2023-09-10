@@ -1,12 +1,29 @@
 
+<div class="text-container">
+  <h1>Explore</h1>
+  <h1>popular cocktails</h1>
+</div>
 
 <div class="container">
-    <!-- <div class="image-container">
-      <img src="../../../assets/images/img.png" alt="Image Alt Text" />
-    </div> -->
-    <div class="cocktail-left" *ngFor = 'let cocktail of readData'>
+  <div *ngFor="let cocktail of readData; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
+    <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
+    <div [ngClass]="{'cocktail-details-left': i % 2 === 0, 'cocktail-details-right': i % 2 !== 0}">
+      <p class="cocktail-title">{{ cocktail.title }}</p>
+      <p class="cocktail-description">{{ cocktail.description }}</p>
+      <p class="cocktail-instructions">{{ cocktail.instructions }}</p>
+      <p class="cocktail-taste">{{ cocktail.taste }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="container">
+    <div class="cocktail-right" *ngFor = 'let cocktail of readData'>
             <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
-            <div class="cocktail-details-left" >
+            <div class="cocktail-details-right" >
                 <p class="cocktail-title">{{cocktail.title}}</p>
                 <p class="cocktail-description">{{cocktail.description}}</p>
                 <p class="cocktail-instructions">{{cocktail.instructions}}</p>
@@ -14,5 +31,6 @@
 
         </div>
     </div>
-  </div>
+  </div> -->
   
+

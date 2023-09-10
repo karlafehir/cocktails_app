@@ -4,32 +4,40 @@
    scroll-behavior: smooth;
 }
 
+:root {
+   --primary-color: #EB6A1D;
+ }
 
 p {
    font-family: Montserrat-Light, 'sans-serif';
    color: white;
 }
 
-.cocktail-title{
+h1{
    font-family: Against-Regular, 'sans-serif';
    font-size: 60px;
-   margin-bottom: -10px;
-   margin-top: 10px;
 }
 
-.cocktail-description{
-   font-family: Montserrat-Light, 'sans-serif';
-   color: white;
-   margin-bottom: -10px;
-}
+// .cocktail-title{
+//    font-family: Against-Regular, 'sans-serif';
+//    font-size: 60px;
+//    margin-bottom: -10px;
+//    margin-top: 10px;
+// }
 
-.cocktail-instructions{
-   font-family: Montserrat-Light, 'sans-serif';
-   color: rgba(255, 255, 255, 0.4);
-   margin-bottom: -10px;
-}
+// .cocktail-description{
+//    font-family: Montserrat-Light, 'sans-serif';
+//    color: white;
+//    margin-bottom: -10px;
+// }
 
-.cocktail-taste{
-   font-family: Against-Regular, 'sans-serif';
-   color: #EB6A1D;
-}
+// .cocktail-instructions{
+//    font-family: Montserrat-Light, 'sans-serif';
+//    color: rgba(255, 255, 255, 0.4);
+//    margin-bottom: -10px;
+// }
+
+// .cocktail-taste{
+//    font-family: Against-Regular, 'sans-serif';
+//    color: var(--primary-color);
+// }

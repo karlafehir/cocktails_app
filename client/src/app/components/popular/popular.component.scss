@@ -1,5 +1,22 @@
+h1{
+  color: var(--primary-color);
+  text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.552);
+  line-height: 40%;
+  display: flex;
+  padding-left: 80px;
+  z-index: 100;
+  transform: translate(3%, 300%);
+}
 
+.text-container{
+  margin-top: -80px;
+}
+
+*{
+  color: white;
+}
 .container {
+  z-index: -1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,4 +59,28 @@ img {
       text-align: right;
       padding: 20px;
   }
+}
+
+.cocktail-title{
+  font-family: Against-Regular, 'sans-serif';
+  font-size: 60px;
+  margin-bottom: -10px;
+  margin-top: 10px;
+}
+
+.cocktail-description{
+  font-family: Montserrat-Light, 'sans-serif';
+  color: white;
+  margin-bottom: -10px;
+}
+
+.cocktail-instructions{
+  font-family: Montserrat-Light, 'sans-serif';
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: -10px;
+}
+
+.cocktail-taste{
+  font-family: Against-Regular, 'sans-serif';
+  color: var(--primary-color);
 }
