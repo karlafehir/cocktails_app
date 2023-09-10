@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 * {
    background-color: #141111;
+   scroll-behavior: smooth;
 }
+
 
 p {
    font-family: Montserrat-Light, 'sans-serif';
@@ -9,7 +11,7 @@ p {
 }
 
 .cocktail-title{
-   font-family: Lovelace-Regular, 'sans-serif';
+   font-family: Against-Regular, 'sans-serif';
    font-size: 60px;
    margin-bottom: -10px;
    margin-top: 10px;

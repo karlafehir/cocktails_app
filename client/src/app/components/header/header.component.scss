@@ -4,18 +4,20 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
 
     p{
-        font-family: Lovelace-Regular, 'sans-serif';
-        font-size: 24px;
+        font-family: Against-Regular, 'sans-serif';
+        font-size: 30px;
+        margin-left: 20px;
     }
     
     .links{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-right: 14px;
     }
 
     a{
@@ -29,6 +31,6 @@
     }
 
     a:hover{
-        color: #ff5722; 
+        color: #EB6A1D; 
     }
 }
