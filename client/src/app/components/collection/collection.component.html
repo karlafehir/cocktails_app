@@ -1,6 +1,7 @@
 
 <div class="buttons">
     <div *ngFor="let taste of tastes">
-        <button class="button-test" (click)="getCocktailByType()">{{taste}}</button>
+        <button class="button-test" (click)="getCocktailByType(taste)">{{taste}}</button>
     </div>
 </div>
+
