@@ -29,6 +29,8 @@ export class CollectionComponent implements OnInit {
   getCocktailTypes(){
      this.tastes = Array.from(new Set(this.readData.map((cocktail: { taste: string }) => cocktail.taste)));
      console.log(this.tastes);
+     //onInit load classic
+     this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === "Classic");
   }
 
   tasteCocktails : any;
