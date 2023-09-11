@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
+import { ExploreComponent } from './components/explore/explore.component';
 
 const routes: Routes = [
   { 
@@ -12,6 +13,10 @@ const routes: Routes = [
   { 
     path: 'popular', 
     component: PopularComponent
+  },
+  { 
+    path: 'explore', 
+    component: ExploreComponent
   },
   { 
     path: 'collection', 

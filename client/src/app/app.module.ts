@@ -10,6 +10,7 @@ import { ApiServiceService } from './services/api-service.service';
 import { HeaderComponent } from './components/header/header.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
+import { ExploreComponent } from './components/explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CollectionComponent } from './components/collection/collection.componen
     TestComponent,
     HeaderComponent,
     PopularComponent,
-    CollectionComponent
+    CollectionComponent,
+    ExploreComponent
   ],
   imports: [
     BrowserModule,
