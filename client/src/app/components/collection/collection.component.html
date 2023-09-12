@@ -57,7 +57,7 @@
 
 
 <div class="container">
-    <div *ngFor="let cocktail of readData; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
+    <div *ngFor="let cocktail of myCocktailCollection; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
       <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
       <div [ngClass]="{'cocktail-details-left': i % 2 === 0, 'cocktail-details-right': i % 2 !== 0}">
         <p class="cocktail-title">{{ cocktail.title }}</p>

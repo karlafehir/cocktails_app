@@ -12,16 +12,25 @@ export class CollectionComponent implements OnInit {
   }
 
   readData: any;
+  myCocktailCollection : any;
   tastes: any;
 
   ngOnInit(): void {
     this.getAllData();
+    this.getCocktailCollectionData();
   } 
 
   getAllData(){
     this.apiService.getAllData().subscribe((res) =>{
       console.log(res);
       this.readData = res;
+    });
+  }
+
+  getCocktailCollectionData(){
+    this.apiService.getCocktailCollectionData().subscribe((res) =>{
+      console.log(res);
+      this.myCocktailCollection = res;
     });
   }
 

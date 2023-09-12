@@ -14,11 +14,16 @@ app.use(express.json())
 app.use(cors())
 // app.use(bodyparser.json())
 
-import { getCocktails, getCocktail, createCocktail, getCocktailByTaste } from './database.js'
+import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection} from './database.js'
 
 app.get("/cocktails" , async (req, res) => {
     const cocktails = await getCocktails()
     res.send(cocktails)
+})
+
+app.get("/MyCocktailCollection" , async (req, res) => {
+    const cocktailCollection = await getCocktailsCollection()
+    res.send(cocktailCollection)
 })
 
 app.get("/cocktails/:id" , async (req, res) => {

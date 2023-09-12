@@ -9,10 +9,15 @@ export class ApiServiceService {
 
   constructor(private _http: HttpClient) { }
 
-  apiUrl = 'http://localhost:8080/cocktails';
+  cocktailsApiUrl = 'http://localhost:8080/cocktails';
+  myCocktailCollectionApiUrl = 'http://localhost:8080/MyCocktailCollection';
 
   getAllData() : Observable<any>{
-    return this._http.get(this.apiUrl);
+    return this._http.get(this.cocktailsApiUrl);
+  }
+
+  getCocktailCollectionData() : Observable<any>{
+    return this._http.get(this.myCocktailCollectionApiUrl);
   }
 
   addNewCocktail(formData: any) : Observable<any>{
@@ -20,7 +25,7 @@ export class ApiServiceService {
     const taste = formData.taste;
     const description = formData.description;
     const  instructions = formData.instructions;
-    return this._http.post(this.apiUrl, 
+    return this._http.post(this.myCocktailCollectionApiUrl, 
       {title, taste, description, instructions}
       );
   }

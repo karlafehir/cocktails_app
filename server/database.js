@@ -19,6 +19,12 @@ export async function getCocktails(){
     return rows;
 }
 
+export async function getCocktailsCollection(){
+    const [rows] = await pool.query(`
+        SELECT * FROM MyCocktailCollection`);
+    return rows;
+}
+
 export async function getCocktail(id){
     const [rows] = await pool.query(`
         SELECT * FROM cocktails 
@@ -41,5 +47,5 @@ export async function createCocktail(title, taste, description, instructions){
 }
 
 
-const result = await getCocktails();
+const result = await getCocktailsCollection();
 console.log(result);
