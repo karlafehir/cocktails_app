@@ -16,6 +16,7 @@ export class ExploreComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllData();
+    this.apiService.getAnimation();
   } 
 
   getAllData(){
