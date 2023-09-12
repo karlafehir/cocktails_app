@@ -97,3 +97,51 @@ margin-bottom: -10px;
 font-family: Against-Regular, 'sans-serif';
 color: var(--primary-color);
 }
+
+@media screen and (max-width: 768px) {
+    h1 {
+      font-size: 40px; 
+      padding-left: 20px; 
+    }
+    
+    .text-container {
+      margin-top: -10px; 
+    }
+  
+    .cocktail-title {
+      font-size: 40px; 
+    }
+  
+    img{
+      max-width: 100%; 
+      height: auto; 
+    }
+    .buttons {
+        padding-left: 20px;
+        justify-content: center;
+      }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 30px; 
+      padding-left: 10px; 
+    }
+    
+    .text-container {
+      margin-top: 0; 
+    }
+  
+    .cocktail-title {
+      font-size: 30px; 
+    }
+  
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    .buttons {
+        padding-left: 10px;
+        justify-content: center;
+      }
+  }
