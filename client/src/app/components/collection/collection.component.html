@@ -60,7 +60,7 @@
 
 
 
-<div class="hidden-slow">
+<div class="hidden">
   <div class="container">
     <div *ngFor="let cocktail of myCocktailCollection; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
       <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
@@ -73,3 +73,9 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="container">
+  <div *ngFor="let cocktail of myCocktailCollection; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
+    <app-cocktail [cocktail]="cocktail" [isEven]="i % 2 === 0"></app-cocktail>
+  </div>
+</div> -->

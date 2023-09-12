@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { ExploreComponent } from './components/explore/explore.component';
+import { CocktailComponent } from './components/cocktail/cocktail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExploreComponent } from './components/explore/explore.component';
     HeaderComponent,
     PopularComponent,
     CollectionComponent,
-    ExploreComponent
+    ExploreComponent,
+    CocktailComponent
   ],
   imports: [
     BrowserModule,
