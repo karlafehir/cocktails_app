@@ -26,6 +26,13 @@ export async function getCocktail(id){
     return rows;
 }
 
+export async function getCocktailByTaste(taste){
+    const [rows] = await pool.query(`
+        SELECT * FROM cocktails 
+        WHERE taste = ?`, [taste]);
+    return rows;
+}
+
 export async function createCocktail(title, taste, description, instructions){
     const [result] = await pool.query(
         `INSERT INTO cocktails ( title, taste, description, instructions )

@@ -22,7 +22,6 @@ export class CollectionComponent implements OnInit {
     this.apiService.getAllData().subscribe((res) =>{
       console.log(res);
       this.readData = res;
-      this.getCocktailTypes();
     });
   }
 
@@ -34,14 +33,15 @@ export class CollectionComponent implements OnInit {
   }
 
   tasteCocktails : any;
+
   getCocktailByType(selectedTaste: string){
     this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === selectedTaste);
     console.log(this.tasteCocktails);
   }
 
   isExpanded = false;
-  selectedTaste: string = ''; // You might already have this variable defined in your component
-  formData: any = {}; // This object will store the form data
+  selectedTaste: string = ''; 
+  formData: any = {}; 
 
 
   toggleSection() {
