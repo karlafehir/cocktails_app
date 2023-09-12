@@ -18,7 +18,7 @@ export class CollectionComponent implements OnInit {
   ngOnInit(): void {
     this.getAllData();
     this.getCocktailCollectionData();
-    this.getAnimation();
+    this.apiService.getAnimation();
   } 
 
   getAllData(){
@@ -81,25 +81,5 @@ export class CollectionComponent implements OnInit {
       this.getCocktailCollectionData();
     });
   }
-
- 
-
-  getAnimation(){
-    
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show');
-        }
-      });
-    });
-    const hiddenElements = document.querySelectorAll('.hidden, .hidden-slow, .cocktail-details-left, .cocktail-details-right');
-    hiddenElements.forEach((element) => {
-      observer.observe(element);
-    } );
-  }
-  
 
 }

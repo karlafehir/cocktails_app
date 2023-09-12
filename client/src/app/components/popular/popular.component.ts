@@ -19,6 +19,7 @@ export class PopularComponent implements OnInit {
         console.log(this.readData);
         
       });
+      this.apiService.getAnimation();
   }
 
 }

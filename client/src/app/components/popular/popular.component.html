@@ -1,9 +1,11 @@
-
+<div class="hidden">
 <div class="text-container">
   <h1>Explore</h1>
   <h1>popular cocktails</h1>
 </div>
+</div>
 
+<div class="hidden-slow">
 <div class="container">
   <div *ngFor="let cocktail of readData; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
     <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
@@ -15,7 +17,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 
 
