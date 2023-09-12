@@ -15,4 +15,14 @@ export class ApiServiceService {
     return this._http.get(this.apiUrl);
   }
 
+  addNewCocktail(formData: any) : Observable<any>{
+    const title = formData.title;
+    const taste = formData.taste;
+    const description = formData.description;
+    const  instructions = formData.instructions;
+    return this._http.post(this.apiUrl, 
+      {title, taste, description, instructions}
+      );
+  }
+
 }

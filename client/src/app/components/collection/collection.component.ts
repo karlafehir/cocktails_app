@@ -53,18 +53,23 @@ export class CollectionComponent implements OnInit {
   }
 
   submitForm() {
-    // Access the form elements and store their values in formData object
     this.formData = {
       title: (document.querySelector('input[name="title"]') as HTMLInputElement).value,
       taste: this.selectedTaste,
       description: (document.querySelector('input[name="description"]') as HTMLInputElement).value,
       instructions: (document.querySelector('input[name="instructions"]') as HTMLInputElement).value,
     };
-
-    // Log the form data to the console
     console.log(this.formData);
 
-    // You can also perform any other actions with the form data here, such as sending it to a server.
+    this.addNewCocktail(this.formData);
+  }
+
+  addNewCocktail(formData: any){
+    this.apiService.addNewCocktail(formData).subscribe((res) =>{
+      console.log(res);
+      this.getAllData();
+      this.toggleSection();
+    });
   }
 
   
