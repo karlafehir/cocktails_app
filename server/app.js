@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 // app.use(bodyparser.json())
 
-import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection} from './database.js'
+import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection, getCocktailFromCollection} from './database.js'
 
 app.get("/cocktails" , async (req, res) => {
     const cocktails = await getCocktails()
@@ -32,13 +32,19 @@ app.get("/cocktails/:id" , async (req, res) => {
     res.send(cocktail)
 })
 
+app.get("/MyCocktailCollection/:id" , async (req, res) => {
+    const id = req.params.id
+    const cocktail = await getCocktailFromCollection(id)
+    res.send(cocktail)
+})
+
 app.get("/cocktails/:taste", async (req, res) => {
     const requestedTaste = req.params.taste.toLowerCase(); // Convert the taste parameter to lowercase for case-insensitive comparison
     const cocktailsWithRequestedTaste = await getCocktailsByTaste(requestedTaste);
     res.send(cocktailsWithRequestedTaste);
 });
 
-app.post("/cocktails", async (req,res) => {
+app.post("/MyCocktailCollection", async (req,res) => {
     const { title, taste, description, instructions } = req.body
     const cocktails = await createCocktail(title, taste, description, instructions)
     res.status(201).send(cocktails)

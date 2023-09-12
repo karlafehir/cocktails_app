@@ -39,12 +39,20 @@ export async function getCocktailByTaste(taste){
     return rows;
 }
 
+export async function getCocktailFromCollection(id){
+    const [rows] = await pool.query(`
+        SELECT * FROM MyCocktailCollection 
+        WHERE id = ?`, [id]);
+    return rows;
+}
+
 export async function createCocktail(title, taste, description, instructions){
     const [result] = await pool.query(
-        `INSERT INTO cocktails ( title, taste, description, instructions )
+        `INSERT INTO MyCocktailCollection ( title, taste, description, instructions )
          VALUES (?, ?, ?, ?)`, [ title, taste, description, instructions ]);
     return getCocktail(result.insertId);
 }
+
 
 
 const result = await getCocktailsCollection();

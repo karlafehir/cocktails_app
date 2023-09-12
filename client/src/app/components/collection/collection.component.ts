@@ -76,8 +76,8 @@ export class CollectionComponent implements OnInit {
   addNewCocktail(formData: any){
     this.apiService.addNewCocktail(formData).subscribe((res) =>{
       console.log(res);
-      this.getAllData();
       this.toggleSection();
+      this.getCocktailCollectionData();
     });
   }
 
