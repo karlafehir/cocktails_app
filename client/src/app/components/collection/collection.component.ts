@@ -39,4 +39,30 @@ export class CollectionComponent implements OnInit {
     console.log(this.tasteCocktails);
   }
 
+  isExpanded = true;
+  selectedTaste: string | null = null;
+
+
+  toggleSection() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  setTaste(taste: string) {
+    this.selectedTaste = taste;
+  }
+
+  submitForm() {
+    // Implement your form submission logic here
+    // You can access the form values using Angular forms or directly via properties
+    const formData = {
+      title: (document.getElementById('title') as HTMLInputElement).value,
+      taste: this.selectedTaste,
+      description: (document.getElementById('description') as HTMLInputElement).value,
+      instructions: (document.getElementById('instructions') as HTMLInputElement).value
+    };
+    console.log(formData);
+    // Perform the actual form submission, e.g., send data to an API
+  }
+
+
 }
