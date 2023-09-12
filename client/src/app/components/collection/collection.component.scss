@@ -114,17 +114,15 @@ label{
     align-items: flex-start;
 }
 
-.section {
+.form-section {
     display: none;
     overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
     transition: max-height 0.3s ease-out;
 }
 
-.section.expanded {
-display: flex;
-max-height: 1000px; /* Adjust this value as needed */
+.form-section.expanded {
+    display: block;
+    max-height: 1000px; /* Adjust this value as needed */
 }
 
 .taste-buttons{
@@ -133,7 +131,7 @@ max-height: 1000px; /* Adjust this value as needed */
     gap: 12px;
 }
 
-button{
+ button{
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -154,13 +152,20 @@ button:hover {
     color: black;
     background-color: var(--primary-color); 
 }
+
+.taste-buttons button.selected {
+    background-color: var(--primary-color); /* Change to your desired color */
+    color: black;
+    /* Add any other styles you want for selected buttons */
+  }
+  
   
 .submit-button{
     padding-top: 12px;
     padding-left: 620px;
 }
 
-
+  
 
 
 
@@ -195,6 +200,11 @@ button:hover {
 }
 
 .button-test:hover {
+    color: black;
+    background-color: var(--primary-color); 
+}
+
+.button-test:active {
     color: black;
     background-color: var(--primary-color); 
 }

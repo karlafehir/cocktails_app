@@ -39,8 +39,9 @@ export class CollectionComponent implements OnInit {
     console.log(this.tasteCocktails);
   }
 
-  isExpanded = true;
-  selectedTaste: string | null = null;
+  isExpanded = false;
+  selectedTaste: string = ''; // You might already have this variable defined in your component
+  formData: any = {}; // This object will store the form data
 
 
   toggleSection() {
@@ -52,17 +53,20 @@ export class CollectionComponent implements OnInit {
   }
 
   submitForm() {
-    // Implement your form submission logic here
-    // You can access the form values using Angular forms or directly via properties
-    const formData = {
-      title: (document.getElementById('title') as HTMLInputElement).value,
+    // Access the form elements and store their values in formData object
+    this.formData = {
+      title: (document.querySelector('input[name="title"]') as HTMLInputElement).value,
       taste: this.selectedTaste,
-      description: (document.getElementById('description') as HTMLInputElement).value,
-      instructions: (document.getElementById('instructions') as HTMLInputElement).value
+      description: (document.querySelector('input[name="description"]') as HTMLInputElement).value,
+      instructions: (document.querySelector('input[name="instructions"]') as HTMLInputElement).value,
     };
-    console.log(formData);
-    // Perform the actual form submission, e.g., send data to an API
+
+    // Log the form data to the console
+    console.log(this.formData);
+
+    // You can also perform any other actions with the form data here, such as sending it to a server.
   }
 
+  
 
 }
