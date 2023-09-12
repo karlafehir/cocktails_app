@@ -7,6 +7,7 @@ h1{
     padding-left: 80px;
     z-index: 100;
     //transform: translate(3%, 300%);
+    
 }
 
 .text-container{
@@ -164,6 +165,32 @@ button:hover {
     padding-top: 12px;
     padding-left: 620px;
 }
+
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(-100px);
+    filter: blur(3px);
+}
+
+.hidden-slow{
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    transform: translateX(-100px);
+    filter: blur(3px);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+@media(prefers-reduced-motion: reduce){
+    .hidden{
+        transition: none;
+    }
+}
+
 
   
 
