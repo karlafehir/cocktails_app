@@ -1,13 +1,13 @@
 h1{
     color: var(--primary-color);
     text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.552);
-    line-height: 30%;
+    line-height: 90%;
     display: flex;
     flex-wrap: wrap;
     padding-left: 80px;
     z-index: 100;
+    margin-bottom: 0;
     //transform: translate(3%, 300%);
-    
 }
 
 .text-container{
@@ -279,3 +279,52 @@ margin-bottom: -10px;
 font-family: Against-Regular, 'sans-serif';
 color: var(--primary-color);
 }
+
+@media screen and (max-width: 1000px) {
+    h1 {
+      font-size: 50px; 
+      padding-left: 20px; 
+    }
+  }
+  
+
+@media screen and (max-width: 768px) {
+    h1 {
+      font-size: 40px; 
+      padding-left: 20px; 
+    }
+    
+    .text-container {
+      margin-top: -10px; 
+    }
+  
+    .cocktail-title {
+      font-size: 40px; 
+    }
+  
+    img{
+      max-width: 100%; 
+      height: auto; 
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 30px; 
+      padding-left: 10px; 
+    }
+    
+    .text-container {
+      margin-top: 0; 
+    }
+  
+    .cocktail-title {
+      font-size: 30px; 
+    }
+  
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
