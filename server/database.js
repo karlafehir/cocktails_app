@@ -32,6 +32,13 @@ export async function getCocktail(id){
     return rows;
 }
 
+export async function deleteCocktail(id){
+    const [rows] = await pool.query(`
+        DELETE FROM MyCocktailCollection 
+        WHERE id = ?`, [id]);
+    return rows;
+}
+
 export async function getCocktailByTaste(taste){
     const [rows] = await pool.query(`
         SELECT * FROM cocktails 

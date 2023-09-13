@@ -62,12 +62,13 @@
 <div class="hidden-slow">
   <div class="container">
     <div *ngFor="let cocktail of myCocktailCollection; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
-      <img src="../../../assets/images/img3.png" alt="Image Alt Text" />
+      <img class="cocktail-img" src="../../../assets/images/img3.png" alt="Cocktail" />
         <div [ngClass]="{'cocktail-details-left': i % 2 === 0, 'cocktail-details-right': i % 2 !== 0}">
           <p class="cocktail-title">{{ cocktail.title }}</p>
           <p class="cocktail-description">{{ cocktail.description }}</p>
           <p class="cocktail-instructions">{{ cocktail.instructions }}</p>
           <p class="cocktail-taste">{{ cocktail.taste }}</p>
+          <img class="icon" src="../../../assets/icons/delete.svg" alt="Delete" (click)="onDeleteCocktail(cocktail.id)">
         </div>
     </div>
   </div>

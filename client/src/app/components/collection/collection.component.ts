@@ -82,4 +82,19 @@ export class CollectionComponent implements OnInit {
     });
   }
 
+  onDeleteCocktail(id: any){
+    console.log(id);
+    this.apiService.deleteCocktail(id).subscribe((res) =>{
+      console.log(res);
+      this.getCocktailCollectionData();
+    }, (err) =>{
+      console.log(err);
+    });
+  }
+
+  onEditCocktail(id: any){
+    console.log(id);
+  }
+  
+
 }
