@@ -1,7 +1,12 @@
 <div class="hidden">
   <div class="buttons">
       <div *ngFor="let taste of tastes">
-          <button class="button-test" (click)="getCocktailByType(taste)">{{taste}}</button>
+          <button 
+            class="button-taste" 
+            [class.selected]="taste === selectedTaste"
+            (click)="setSelectedTaste(taste)">
+            {{taste}}
+          </button>
       </div>
   </div>
 </div>

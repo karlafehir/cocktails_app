@@ -5,7 +5,7 @@
     padding-left: 120px;
 }
 
-.button-test{
+.button-taste{
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -22,9 +22,20 @@
     font-size: 16px;
 }
 
-.button-test:hover {
+.button-taste:hover {
     color: black;
     background-color: var(--primary-color); 
+    cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background-color: var(--primary-color); 
+}
+
+.selected {
+  background-color: var(--primary-color);
+  color: black;
 }
 
 
@@ -120,6 +131,11 @@ color: var(--primary-color);
         padding-left: 20px;
         justify-content: center;
       }
+    .button-taste{
+        width: 120px;
+        height: 34px;
+        font-size: 14px;
+      }
   }
   
   @media screen and (max-width: 480px) {
@@ -144,4 +160,9 @@ color: var(--primary-color);
         padding-left: 10px;
         justify-content: center;
       }
+      .button-taste{
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+      }   
   }

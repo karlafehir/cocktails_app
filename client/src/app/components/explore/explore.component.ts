@@ -34,10 +34,18 @@ export class ExploreComponent implements OnInit {
      this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === "Classic");
   }
 
+  selectedTaste: string | null = null;
+  setSelectedTaste(taste: string) {
+    this.selectedTaste = taste;
+    this.getCocktailByType(taste);
+  }
+
   tasteCocktails : any;
   getCocktailByType(selectedTaste: string){
     this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === selectedTaste);
     console.log(this.tasteCocktails);
   }
+
+  
 
 }

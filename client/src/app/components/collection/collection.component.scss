@@ -155,9 +155,8 @@ button:hover {
 }
 
 .taste-buttons button.selected {
-    background-color: var(--primary-color); /* Change to your desired color */
+    background-color: var(--primary-color);
     color: black;
-    /* Add any other styles you want for selected buttons */
   }
   
   
@@ -166,8 +165,14 @@ button:hover {
     padding-left: 620px;
 }
 
-
-
+.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .fade.in {
+    opacity: 1;
+  }
 
 
 
