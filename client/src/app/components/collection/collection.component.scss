@@ -152,6 +152,7 @@ label{
 button:hover {
     color: black;
     background-color: var(--primary-color); 
+    cursor: pointer;
 }
 
 .taste-buttons button.selected {
@@ -340,4 +341,3 @@ color: var(--primary-color);
       height: auto;
     }
   }
-  

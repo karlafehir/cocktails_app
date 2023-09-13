@@ -22,4 +22,18 @@ export class PopularComponent implements OnInit {
       this.apiService.getAnimation();
   }
 
+  addToMyCollection(cocktail: any) {
+    this.apiService.addNewCocktail(cocktail).subscribe((res) =>{
+      console.log(res);
+      if (res[0].id) {
+        const newCocktailId = res.id;
+      } else {
+        console.error("No ID found in the server response.");
+      }
+    },
+    (error) => {
+      console.error("Error adding cocktail to MyCocktailCollection", error);
+    });
+  }
+  
 }
