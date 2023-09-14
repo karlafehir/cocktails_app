@@ -16,16 +16,19 @@ export class CollectionComponent implements OnInit {
   tastes: any;
 
   ngOnInit(): void {
+    this.apiService.getAnimation();
     this.getAllData();
     this.getCocktailCollectionData();
-    this.apiService.getAnimation();
   } 
 
   getAllData(){
     this.apiService.getAllData().subscribe((res) =>{
       console.log(res);
       this.readData = res;
+      this.tastes = Array.from(new Set(this.readData.map((cocktail: { taste: string }) => cocktail.taste)));
+      console.log(this.tastes);
     });
+    
   }
 
   getCocktailCollectionData(){
@@ -34,20 +37,21 @@ export class CollectionComponent implements OnInit {
       this.myCocktailCollection = res;
     });
   }
-
-  getCocktailTypes(){
-     this.tastes = Array.from(new Set(this.readData.map((cocktail: { taste: string }) => cocktail.taste)));
-     console.log(this.tastes);
-     //onInit load classic
-     this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === "Classic");
-  }
-
   tasteCocktails : any;
 
-  getCocktailByType(selectedTaste: string){
-    this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === selectedTaste);
-    console.log(this.tasteCocktails);
-  }
+  // getCocktailTypes(){
+  //    this.tastes = Array.from(new Set(this.readData.map((cocktail: { taste: string }) => cocktail.taste)));
+  //    console.log(this.tastes);
+  //    //onInit load classic
+  //    this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === "Classic");
+  //     console.log(this.tasteCocktails);
+  //   }
+
+
+  // getCocktailByType(selectedTaste: string){
+  //   this.tasteCocktails = this.readData.filter((cocktail: { taste: string; }) => cocktail.taste === selectedTaste);
+  //   console.log(this.tasteCocktails);
+  // }
 
   isExpanded = false;
   selectedTaste: string = ''; 
@@ -61,7 +65,6 @@ export class CollectionComponent implements OnInit {
   setTaste(taste: string) {
     this.selectedTaste = taste;
   }
-
   submitForm() {
     this.formData = {
       title: (document.querySelector('input[name="title"]') as HTMLInputElement).value,
@@ -95,6 +98,12 @@ export class CollectionComponent implements OnInit {
   onEditCocktail(id: any){
     console.log(id);
   }
+
+  
+
+  
+  
+  
   
 
 }

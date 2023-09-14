@@ -18,9 +18,17 @@
         <div class="form-group">
           <label for="taste">Taste:</label>
           <div class="taste-buttons">
-            <button type="button" (click)="setTaste('Sweet')" [class.selected]="selectedTaste === 'Sweet'">Sweet</button>
+            <div *ngFor="let taste of tastes">
+              <button 
+                type="button"
+                [class.selected]="selectedTaste === taste"
+                (click)="setTaste(taste)">
+                {{taste}}
+              </button>
+          </div>
+            <!-- <button type="button" (click)="setTaste('Sweet')" [class.selected]="selectedTaste === 'Sweet'">Sweet</button>
             <button type="button" (click)="setTaste('Savory')" [class.selected]="selectedTaste === 'Savory'">Savory</button>
-            <button type="button" (click)="setTaste('Spicy')" [class.selected]="selectedTaste === 'Spicy'">Spicy</button>
+            <button type="button" (click)="setTaste('Spicy')" [class.selected]="selectedTaste === 'Spicy'">Spicy</button> -->
           </div>
         </div>
   
