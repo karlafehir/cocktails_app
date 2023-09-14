@@ -66,8 +66,8 @@ export class CollectionComponent implements OnInit {
     this.formData = {
       title: (document.querySelector('input[name="title"]') as HTMLInputElement).value,
       taste: this.selectedTaste,
-      description: (document.querySelector('input[name="description"]') as HTMLInputElement).value,
-      instructions: (document.querySelector('input[name="instructions"]') as HTMLInputElement).value,
+      description: (document.querySelector('textarea[name="description"]') as HTMLTextAreaElement).value,
+      instructions: (document.querySelector('textarea[name="instructions"]') as HTMLTextAreaElement).value,
     };
     console.log(this.formData);
 
