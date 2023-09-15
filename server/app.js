@@ -12,9 +12,50 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-// app.use(bodyparser.json())
+// app.use(bodyparser.json()) - zbog ovog ne radi
 
-import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection, getCocktailFromCollection, deleteCocktail} from './database.js'
+app.listen(8080, () => {
+    console.log("Server running on port 8080");
+})
+
+import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection, getCocktailFromCollection, deleteCocktail, registerUser, loginUser} from './database.js'
+
+
+
+
+
+
+
+app.post('/register', async (req, res) => {
+    try {
+      const { name, email, password } = req.body;
+      const userId = await registerUser(name, email, password);
+      res.status(201).json({ userId });
+    } catch (error) {
+      console.error(error);
+      res.status(400).json({ message: 'Registration failed' });
+    }
+  });
+
+
+  app.post('/login', async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      const { userId, token } = await loginUser(email, password);
+      res.json({ userId, token });
+    } catch (error) {
+      console.error(error);
+      res.status(401).json({ message: 'Authentication failed' });
+    }
+  });
+  
+
+
+
+
+
+
+
 
 app.get("/cocktails" , async (req, res) => {
     const cocktails = await getCocktails()
@@ -64,6 +105,3 @@ app.use((err, req, res, next) => {
 })
 
 
-app.listen(8080, () => {
-    console.log("Server running on port 8080");
-})
