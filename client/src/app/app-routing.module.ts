@@ -5,28 +5,35 @@ import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { 
     path: 'test', 
-    component: TestComponent
+    component: TestComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'popular', 
-    component: PopularComponent
+    component: PopularComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'explore', 
-    component: ExploreComponent
+    component: ExploreComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'collection', 
-    component: CollectionComponent
+    component: CollectionComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'login', 
     component: LoginComponent
-  }
+  },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({

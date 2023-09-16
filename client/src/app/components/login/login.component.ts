@@ -26,4 +26,8 @@ export class LoginComponent {
       }
     );
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+  }
 }
