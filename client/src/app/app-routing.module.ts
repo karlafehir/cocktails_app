@@ -4,6 +4,7 @@ import { TestComponent } from './components/test/test.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { ExploreComponent } from './components/explore/explore.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { 
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'collection', 
     component: CollectionComponent
   },
+  { 
+    path: 'login', 
+    component: LoginComponent
+  }
 ];
 
 @NgModule({

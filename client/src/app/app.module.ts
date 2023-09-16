@@ -12,6 +12,8 @@ import { PopularComponent } from './components/popular/popular.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { CocktailComponent } from './components/cocktail/cocktail.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { CocktailComponent } from './components/cocktail/cocktail.component';
     PopularComponent,
     CollectionComponent,
     ExploreComponent,
-    CocktailComponent
+    CocktailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ApiServiceService],
   bootstrap: [AppComponent]
