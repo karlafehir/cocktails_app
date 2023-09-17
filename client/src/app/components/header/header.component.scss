@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: space-between;
 
-
     p{
         font-family: Against-Regular, 'sans-serif';
         font-size: 30px;
@@ -34,4 +33,12 @@
         color: #EB6A1D; 
     }
     
+    .not-logged-in-link {
+        color: #333;
+        cursor:not-allowed;
+    }
+
+    .not-logged-in-link:hover {
+        color: #333;
+    }
 }

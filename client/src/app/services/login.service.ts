@@ -24,4 +24,10 @@ export class LoginService {
   handleError(err: any): void {
     console.error('Error logging in', err);
   }
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token; 
+  }
+
 }
