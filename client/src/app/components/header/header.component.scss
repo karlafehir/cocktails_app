@@ -27,6 +27,7 @@
         color: #fff;
         transition: color 0.3s ease;
         padding: 18px;
+        cursor: pointer;
     }
 
     a:hover{
@@ -35,7 +36,7 @@
     
     .not-logged-in-link {
         color: #333;
-        cursor:not-allowed;
+        cursor: not-allowed;
     }
 
     .not-logged-in-link:hover {

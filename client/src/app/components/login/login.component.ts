@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/User';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -8,13 +9,18 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   user: User = {
     email: '',
     password: ''
   };
+  
+  constructor(private loginService: LoginService, private apiService : ApiServiceService) {}
 
-  constructor(private loginService: LoginService) {}
+  ngOnInit(): void {
+    this.apiService.getAnimation();
+  }
+
 
   onSubmit() {
     this.loginService.login(this.user).subscribe(
@@ -27,7 +33,4 @@ export class LoginComponent {
     );
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
-  }
 }
