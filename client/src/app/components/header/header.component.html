@@ -1,8 +1,7 @@
 <div id="header">
     <p>MyCocktails</p>
     <div class="links">
-        <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/">Home</a>
-        <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/popular">Popular</a>
+        <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/popular">Home</a>
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/explore">Explore</a>
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/collection">My Collection</a>
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" (click)="logout()">Logout</a>
