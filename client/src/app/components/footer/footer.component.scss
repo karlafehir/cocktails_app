@@ -1,0 +1,55 @@
+/* styles.css */
+
+hr{
+    width: 80%;
+    margin-top: 200px;
+}
+
+.footer {
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+    margin-bottom: 80px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons a {
+    text-decoration: none;
+    margin: 0 20px 20px 20px;
+    fill: #fff;
+    font-size: 20px;
+}
+
+.footer-icons a img {
+    height: 40px; 
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+p{
+    color: #ffffff73;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    hr {
+        margin-top: 100px;
+    }
+
+    .footer {
+        padding: 40px 0;
+        margin-bottom: 40px;
+    }
+    .footer-icons a {
+        margin: 0 10px 10px 10px;
+        font-size: 16px;
+    }
+
+    .footer-icons a img {
+        height: 30px;
+    }
+}
