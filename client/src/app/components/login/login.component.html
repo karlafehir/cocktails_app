@@ -10,6 +10,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
       </div>
+      <p>Don't have an account? <span style="cursor: pointer; color:#EB6A1D" (click)="navigateToRegister()">Register</span></p>
       <button type="submit">Login</button>
     </form>
   </div>

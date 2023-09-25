@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/User';
 import { ApiServiceService } from 'src/app/services/api-service.service';
@@ -11,11 +12,12 @@ import { LoginService } from 'src/app/services/login.service';
 
 export class LoginComponent implements OnInit{
   user: User = {
+    name: '',
     email: '',
     password: ''
   };
   
-  constructor(private loginService: LoginService, private apiService : ApiServiceService) {}
+  constructor(private loginService: LoginService, private apiService : ApiServiceService, private router: Router) {}
 
   ngOnInit(): void {
     this.apiService.getAnimation();
@@ -31,6 +33,12 @@ export class LoginComponent implements OnInit{
         this.loginService.handleError(err);
       }
     );
+  }
+
+  navigateToRegister() {
+    console.log("aaaa");
+    
+    this.router.navigate(['/register']);
   }
 
 }

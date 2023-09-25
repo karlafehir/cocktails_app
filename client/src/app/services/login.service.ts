@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from '../interfaces/User';
 import { LoginResponse } from '../interfaces/LoginResponse';
+import { RegisterResponse } from '../interfaces/RegisterResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,19 @@ export class LoginService {
     const token = localStorage.getItem('token');
     return !!token; 
   }
+
+  register(user: User): Observable<RegisterResponse> {
+    return this.http.post<RegisterResponse>('http://localhost:8080/register', user);
+  }
+
+ handleRegisterResponse(response: RegisterResponse): void {
+    // Handle successful registration, e.g., navigate to login page
+    this.router.navigate(['/login']);
+  }
+
+  handleRegisterError(error: any): void {
+    console.error('Error registering user', error);
+    // Handle registration error, e.g., display an error message to the user
+  }  
 
 }
