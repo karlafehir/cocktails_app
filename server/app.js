@@ -93,8 +93,8 @@ app.get("/cocktails/:taste", async (req, res) => {
 });
 
 app.post("/MyCocktailCollection", async (req,res) => {
-    const { title, taste, description, instructions } = req.body
-    const cocktails = await createCocktail(title, taste, description, instructions)
+    const { title, taste, description, instructions, image } = req.body
+    const cocktails = await createCocktail(title, taste, description, instructions, image)
     res.status(201).send(cocktails)
 })
 

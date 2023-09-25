@@ -101,10 +101,10 @@ export async function getCocktailFromCollection(id){
     return rows;
 }
 
-export async function createCocktail(title, taste, description, instructions){
+export async function createCocktail(title, taste, description, instructions, image){
     const [result] = await pool.query(
-        `INSERT INTO MyCocktailCollection ( title, taste, description, instructions )
-         VALUES (?, ?, ?, ?)`, [ title, taste, description, instructions ]);
+        `INSERT INTO MyCocktailCollection ( title, taste, description, instructions, image )
+         VALUES (?, ?, ?, ?, ?)`, [ title, taste, description, instructions, image ]);
     return getCocktail(result.insertId);
 }
 

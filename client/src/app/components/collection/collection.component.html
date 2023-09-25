@@ -13,6 +13,9 @@
         <div class="form-group">
           <label for="title">Title:</label>
           <input type="text" class="input-field-text" name="title" placeholder="Enter title">
+
+          <label for="image">Image:</label>
+          <input type="text" class="input-field-text" name="image" placeholder="Enter image url">
         </div>
         
         <div class="form-group">
@@ -70,7 +73,7 @@
 <div class="hidden-slow">
   <div class="container">
     <div *ngFor="let cocktail of myCocktailCollection; let i = index" [ngClass]="{'cocktail-left': i % 2 === 0, 'cocktail-right': i % 2 !== 0}">
-      <img class="cocktail-img" src="../../../assets/images/img3.png" alt="Cocktail" />
+      <img class="cocktail-img" src={{cocktail.image}} alt="Cocktail" />
         <div [ngClass]="{'cocktail-details-left': i % 2 === 0, 'cocktail-details-right': i % 2 !== 0}">
           <p class="cocktail-title">{{ cocktail.title }}</p>
           <p class="cocktail-description">{{ cocktail.description }}</p>

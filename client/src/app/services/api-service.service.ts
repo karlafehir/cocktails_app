@@ -24,11 +24,13 @@ export class ApiServiceService {
     const taste = formData.taste;
     const description = formData.description;
     const instructions = formData.instructions;
+    const image = formData.image;
     return this._http.post(this.myCocktailCollectionApiUrl, {
       title,
       taste,
       description,
       instructions,
+      image
     });
   }
 

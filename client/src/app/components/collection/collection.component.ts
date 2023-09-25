@@ -68,6 +68,7 @@ export class CollectionComponent implements OnInit {
   submitForm() {
     this.formData = {
       title: (document.querySelector('input[name="title"]') as HTMLInputElement).value,
+      image: (document.querySelector('input[name="image"]') as HTMLInputElement).value,
       taste: this.selectedTaste,
       description: (document.querySelector('textarea[name="description"]') as HTMLTextAreaElement).value,
       instructions: (document.querySelector('textarea[name="instructions"]') as HTMLTextAreaElement).value,
