@@ -57,7 +57,7 @@
 
 * {
     box-sizing: border-box;
-    margin: 0px;
+    margin: 12px;
     padding: 12px;
   }
   body {
@@ -91,6 +91,7 @@
   nav .mainMenu li a:hover{
     color: #EB6A1D; 
 }
+
   nav .openMenu {
     margin: 20px;
     display: none;
