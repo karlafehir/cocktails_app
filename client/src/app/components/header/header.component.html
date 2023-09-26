@@ -1,4 +1,4 @@
-<div id="header">
+<!-- <div id="header">
     <p>MyCocktails</p>
     <div class="links">
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/popular">Home</a>
@@ -6,4 +6,17 @@
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/collection">My Collection</a>
         <a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" (click)="logout()">Logout</a>
     </div>
-</div>
+</div> -->
+
+
+<nav>
+    <p>MyCocktails</p>
+    <div class="openMenu"><img class="fa fa-bars" src="../../../assets/icons/menu.svg"></div>
+    <ul class="mainMenu">
+        <li><a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/popular">Home</a></li>
+        <li><a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/explore">Explore</a> </li>
+        <li><a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" routerLink="/collection">My Collection</a></li>
+        <li><a [ngClass]="{'not-logged-in-link': !isLoggedIn()}" (click)="logout()">Logout</a></li>
+        <div class="closeMenu"><img class="fa fa-times" src="../../../assets/icons/close.svg"></div>
+    </ul>
+</nav>
