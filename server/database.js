@@ -3,7 +3,6 @@ import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-
 dotenv.config();
 
 const pool = mysql.createPool({
@@ -14,52 +13,30 @@ const pool = mysql.createPool({
     port: 3306
 }).promise()
 
-
-
-
-
 export async function registerUser(name, email, password) {
-    // Hash the password before storing it in the database
     const hashedPassword = await bcrypt.hash(password, 10);
-    
     const [result] = await pool.query(
       'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
       [name, email, hashedPassword]
     );
-    
     return result.insertId;
   }
 
   export async function loginUser(email, password) {
     const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
     const user = rows[0];
-  
     if (!user) {
       throw new Error('User not found');
     }
-  
-    // Compare the provided password with the hashed password in the database
     const passwordMatch = await bcrypt.compare(password, user.password);
-  
     if (!passwordMatch) {
       throw new Error('Incorrect password');
     }
-  
-    // Generate a JWT token for the user
     const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
-      expiresIn: '10d', // Token expiration time
+      expiresIn: '10d', 
     });
-  
     return { userId: user.id, token };
 }
-
-
-
-
-
-
-
-
 
 export async function getCocktails(){
     const [rows] = await pool.query(`

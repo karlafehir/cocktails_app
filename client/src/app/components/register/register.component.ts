@@ -22,7 +22,6 @@ export class RegisterComponent {
     this.apiService.getAnimation();
   }
 
-
   onSubmit() {
     this.loginService.register(this.user).subscribe(
       (response) => {

@@ -6,25 +6,17 @@ import cors from 'cors'
 // const bodyparser = require('body-parser')
 // const cors = require('cors')
 
-
-
 const app = express()
 
 app.use(express.json())
 app.use(cors())
-// app.use(bodyparser.json()) - zbog ovog ne radi
+// app.use(bodyparser.json()) 
 
 app.listen(8080, () => {
     console.log("Server running on port 8080");
 })
 
 import { getCocktails, getCocktail, createCocktail, getCocktailByTaste, getCocktailsCollection, getCocktailFromCollection, deleteCocktail, registerUser, loginUser} from './database.js'
-
-
-
-
-
-
 
 app.post('/register', async (req, res) => {
     try {
@@ -35,28 +27,19 @@ app.post('/register', async (req, res) => {
       console.error(error);
       res.status(400).json({ message: 'Registration failed' });
     }
-  });
+});
 
-
-  app.post('/login', async (req, res) => {
-    try {
-      const { email, password } = req.body;
-      const { userId, token } = await loginUser(email, password);
-      res.json({ userId, token });
-    } catch (error) {
-      console.error(error);
-      res.status(401).json({ message: 'Authentication failed' });
-    }
-  });
+app.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const { userId, token } = await loginUser(email, password);
+    res.json({ userId, token });
+  } catch (error) {
+    console.error(error);
+    res.status(401).json({ message: 'Authentication failed' });
+  }
+});
   
-
-
-
-
-
-
-
-
 app.get("/cocktails" , async (req, res) => {
     const cocktails = await getCocktails()
     res.send(cocktails)
@@ -85,9 +68,8 @@ app.delete("/MyCocktailCollection/:id" , async (req, res) => {
     res.send(cocktail)
 })
 
-
 app.get("/cocktails/:taste", async (req, res) => {
-    const requestedTaste = req.params.taste.toLowerCase(); // Convert the taste parameter to lowercase for case-insensitive comparison
+    const requestedTaste = req.params.taste.toLowerCase();
     const cocktailsWithRequestedTaste = await getCocktailsByTaste(requestedTaste);
     res.send(cocktailsWithRequestedTaste);
 });
@@ -103,5 +85,3 @@ app.use((err, req, res, next) => {
     res.header("Access-Control-Allow-Origin", "localhost:4200"); 
     res.status(500).send('Something broke!')
 })
-
-

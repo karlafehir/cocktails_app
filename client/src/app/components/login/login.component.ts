@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit{
     this.apiService.getAnimation();
   }
 
-
   onSubmit() {
     this.loginService.login(this.user).subscribe(
       (response) => {
@@ -36,8 +35,6 @@ export class LoginComponent implements OnInit{
   }
 
   navigateToRegister() {
-    console.log("aaaa");
-    
     this.router.navigate(['/register']);
   }
 

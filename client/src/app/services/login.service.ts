@@ -19,7 +19,7 @@ export class LoginService {
   handleLoginResponse(response: LoginResponse): void {
     const { userId, token } = response;
     localStorage.setItem('token', token);
-    this.router.navigate(['/collection']);
+    this.router.navigate(['/popular']);
   }
 
   handleError(err: any): void {
@@ -36,13 +36,11 @@ export class LoginService {
   }
 
  handleRegisterResponse(response: RegisterResponse): void {
-    // Handle successful registration, e.g., navigate to login page
     this.router.navigate(['/login']);
   }
 
   handleRegisterError(error: any): void {
     console.error('Error registering user', error);
-    // Handle registration error, e.g., display an error message to the user
   }  
 
 }

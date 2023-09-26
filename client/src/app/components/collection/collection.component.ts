@@ -100,11 +100,4 @@ export class CollectionComponent implements OnInit {
     console.log(id);
   }
 
-  
-
-  
-  
-  
-  
-
 }
